@@ -1,7 +1,17 @@
-<%= render 'users/list', user: @user %>
+<% if @book.errors.any? %>
+ <%= @book.errors.count %>errors prohibited this obj from being saved:
+ <ul>
+   <% @book.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+   <% end %>
+ </ul>
+ <% end %>
 
-<% @books.each do |book| %>
+ <%= render 'users/list', user: @user %>
+
+
 <h4>Books</h4>
+<% @books.each do |book| %>
 <div>
   <p>Title:<%= book.title %></p>
   <p>Opinion:<%= book.body %></p>
