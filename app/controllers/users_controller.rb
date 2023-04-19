@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path
   end
-  
+
   def index
     @users = User.all
     @book = Book.new
