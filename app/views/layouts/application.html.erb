@@ -13,7 +13,7 @@
   <body class="d-flex flex-column vh-100">
 
    <header class="shadow-no">
-     <nav class="navbar navbar-expand-lg navbar-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
         <a class="navbar-brand" href="/">
           <span>Bookers</span>
@@ -31,10 +31,6 @@
             <%= link_to "Home", user_path(current_user) %><br>
             </li>
             <li class="nav-item">
-            <i class="fas fa-sign-in-alt"></i>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-            </li>
-            <li class="nav-item">
             <i class="fas fa-users"></i>
             <%= link_to "Users", users_path %>
             </li>
@@ -42,22 +38,26 @@
             <i class="fas fa-book-open"></i>
             <%= link_to "Books", books_path %>
             </li>
+            <li class="nav-item">
+            <i class="fas fa-sign-in-alt"></i>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            </li>
             <% else %>
             <li class="nav-item">
             <i class="fas fa-home"></i>
        　    <%= link_to "Home", root_path %><br>
          　  </li>
             <li class="nav-item">
+            <i class="fas fa-link"></i>
+            <%= link_to "About", about_path %>
+            </li>
+         　  <li class="nav-item">
             <i class="fas fa-user-plus"></i>
             <%= link_to "Sign up", new_user_registration_path %>
             </li>
             <li class="nav-item">
             <i class="fas fa-sign-in-alt"></i>
             <%= link_to "Log in", new_user_session_path %>
-            </li>
-            <li class="nav-item">
-            <i class="fas fa-link"></i>
-            <%= link_to "About", about_path %>
             </li>
             <% end %>
             </div>
